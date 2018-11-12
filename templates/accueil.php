@@ -18,8 +18,103 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 
     <div class="page-header">
-      <h1>Titre</h1>
+      <h1>Liste des trajets</h1>
     </div>
 
-    <p class="lead">Contenu </p>
+    <p class="lead">
+    	
+    
 
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Départ</th>
+      <th scope="col">Sens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>8h15</td>
+      <td>Lille - Lens</td>
+      <td><button type="button" class="buttonJoin btn btn-primary">Rejoindre</button></td>
+      <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>9h00</td>
+      <td>Lille - Lens</td>
+      <td><button type="button" class="buttonJoin btn btn-primary">Rejoindre</button></td>
+      <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
+      <td><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>17h30</td>
+      <td>Lens - Lille</td>
+      <td><button type="button" class="buttonJoin btn btn-primary" >Rejoindre</button></td>
+      <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+    </p>
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+$(document).ready(function(){
+   
+
+    $(".buttonJoin").on("click", function(){
+      if( $(this).attr("class")=="buttonJoin btn btn-primary"){
+        $(this).attr("class", "buttonJoin btn btn-danger");
+        $(this).text("Quitter");
+      }
+      else {
+        $(this).attr("class", "buttonJoin btn btn-primary");
+        $(this).text("Rejoindre");
+      }
+    })
+
+
+
+    $(".travelDetails").on("click", function(){
+      alert("Details pour le trajet " + $(this).attr("class"))
+    })
+
+
+
+
+
+});
+
+
+
+
+
+</script>
