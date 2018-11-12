@@ -22,7 +22,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 	<!-- Liaisons aux fichiers css de Bootstrap -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Francois+One|Lobster" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Francois+One|Lobster|Amaranth" rel="stylesheet">
 	<link href="css/design.css" rel="stylesheet" />
 	<link href="css/sticky-footer.css" rel="stylesheet" />
 	<!--[if lt IE 9]>
@@ -52,17 +52,18 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
         </button>
-	<a class="navbar-brand" href="index.php?view=accueil"><img src="https://www.bumalift.com/media/1084/university.svg" alt=""><span>quovouat</span></a>
+	<a class="navbar-brand" href="index.php?view=accueil"><img src="https://dasdigitaleauto.de/wp-content/uploads/2018/04/noun_40506_51A7F9.png" alt=""><span>kovoit</span></a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-         	<!-- <li class="active"><a href="index.php?view=accueil">Accueil</a></li> -->
 		<?=mkHeadLink("Accueil","accueil",$view)?>
+		<?=mkHeadLink("Proposer un trajet","createtrajet",$view)?>
+		<?=mkHeadLink("Rechercher un trajet","#",$view)?>
 		<?php
 		// Si l'utilisateur n'est pas connecte, on affiche un lien de connexion 
 		if (!valider("connecte","SESSION"))
-			echo mkHeadLink("Se connecter","login",$view); 
-			//echo "<li><a href=\"index.php?view=login\">Se connecter</a></li>";
+			echo mkHeadLink("Inscription","#",$view); 
+			echo mkHeadLink("Connexion","login",$view); 
 		?>
         </ul>
       </div><!--/.nav-collapse -->

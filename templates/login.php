@@ -35,7 +35,7 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
       <div class="checkbox">
           <label><input type="checkbox" name="remember" <?php echo $checked;?> >Se souvenir de moi</label>
       </div>
-      <button type="submit" name="action" value="Connexion" class="btn btn-default">Connexion</button>
+      <button type="submit" name="action" value="Connexion" class="btn btn-default btn_login">Connexion</button>
     </form>
   </div>
 </div>
