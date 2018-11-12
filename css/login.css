@@ -1,0 +1,29 @@
+.login_form {
+    width: 100%;
+    padding: 40px;
+    background: #ffffffd1;
+}
+
+.login_zone {
+    display: flex;
+    border: solid 2px #EEEEEE;
+    background: url(https://thebesttravelplaces.com/wp-content/uploads/2015/05/Group-of-Teenagers-Carpooling.jpg);
+    background-size: cover;
+    background-position: 0 -190px;
+}
+
+.login_desc {
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: lighter;
+    font-size: 19px;
+    color: #4c4c4c;
+    font-family: 'Amaranth', sans-serif;
+}
+
+.btn_login {}

@@ -1,0 +1,68 @@
+.logo_zone {}
+
+.navbar-brand {
+    display: flex;
+}
+
+.navbar-brand>img {
+    width: 62px;
+    height: 63px;
+}
+
+.navbar {
+    margin: 0 auto;
+    background: transparent;
+    box-shadow: 0 0 0;
+    border: 0;
+}
+
+.navbar-brand>span {
+    padding: 25px 20px 0;
+    font-size: 50px;
+    color: #51a7f9;
+    text-shadow: 1px 1px 1px #EEEEEE;
+    font-family: 'Lobster', cursive;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+
+.nav {
+    float: right !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #51a7f9;
+    font-family: 'Francois One', sans-serif;
+    font-size: 22px;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background: #51a7f9;
+    color: #ffffff;
+    font-weight: lighter;
+}
+
+.navbar-fixed-top .navbar-collapse {
+    height: 85px !important;
+    background: #FFF;
+    padding: 18px;
+    box-shadow: 0px 4px 13px -8px #000;
+}
+
+h1 {
+    font-size: 36px;
+    color: #51a7f9;
+    font-family: 'Francois One', sans-serif;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
