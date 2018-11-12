@@ -62,16 +62,18 @@ $('.clockpicker').clockpicker();
 
   <div class="col-md-4 .offset-md-4">
 
-  <div class="form-check">
-  <input class="form-check-input" type="radio" name="Radio" id="Radios1" value="lenslille" checked>
-  <label class="form-check-label" for="Radios1">
-    Default radio
-  </label>
-</div>
+  </br>
+
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Second default radio
+  <input class="form-check-input" type="radio" name="radios" id="lenslille" value="lenslille" checked>
+  <label class="form-check-label" for="lenslille">
+    LENS <span class="glyphicon glyphicon-arrow-right"></span> LILLE
+  </label>
+</div> </br>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="radios" id="lillelens" value="lillelens">
+  <label class="form-check-label" for="lillelens">
+    LENS <span class="glyphicon glyphicon-arrow-left"></span> LILLE
   </label>
 </div>
 
@@ -79,7 +81,6 @@ $('.clockpicker').clockpicker();
 
   <div class="col-md-4 .offset-md-4">
 
-  voizadjnazpdnazpidnazpend
 
   </div>
 
