@@ -68,11 +68,11 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
         </ul>
       </div><!--/.nav-collapse -->
   </div>
-  
 
-
-  <!-- Begin page content -->
+   <!-- Begin page content -->
   <div class="container">
+	  
+
 
 
 

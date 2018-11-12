@@ -66,3 +66,49 @@ h3 {
     margin-top: 20px;
     margin-bottom: 0px;
 }
+
+.create_trajet_zone {
+    background: url(http://blog.bourse-des-vols.com/wp-content/uploads/2017/11/covoiturage-image-article.jpg);
+    padding: 40px;
+    background-size: cover;
+}
+
+.create_trajet_form {
+    background: #ffffffe3;
+    box-shadow: 0px 0px 35px -5px #000;
+    padding: 30px 35px;
+}
+
+.cartouche_zone {
+    display: flex;
+}
+
+.cartouche {
+    margin-top: 10px;
+    border: solid 1px #EEE;
+    margin-right: 10px;
+    padding: 10px 18px;
+    width: 100%;
+}
+
+.cart_title {
+    font-family: 'Francois One', sans-serif;
+    font-size: 20px;
+}
+
+.cart_num {
+    font-size: 23px;
+    color: #51a6f8;
+    font-family: 'Amaranth', sans-serif;
+    margin-top: -5px;
+}
+
+.cart_num>span:nth-child(1) {}
+
+.cart_num>span:nth-child(2) {
+    margin-left: 3px;
+}
+
+.page-header {
+    margin-top: 80px;
+}

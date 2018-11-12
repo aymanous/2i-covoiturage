@@ -12,7 +12,24 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 </div>
 <!-- fin du content --> 
-
+<?php if (valider("view") != "login") {?>
+<div class="container">
+<div class="row cartouche_zone">
+    <div class="cartouche">
+      <div class="cart_title">Nombre de covoiturages</div>
+      <div class="cart_num"><span>10</span><span>covoiturages</span></div>
+    </div>
+    <div class="cartouche">
+      <div class="cart_title">Nombre de voyages</div>
+      <div class="cart_num"><span>12</span><span>voyages</span></div>
+    </div>
+    <div class="cartouche">
+      <div class="cart_title">Nombre de passagers</div>
+      <div class="cart_num"><span>16</span><span>trajets</span></div>
+    </div>
+  </div>
+  </div>
+ <?php }?>
 <!-- fin du wrap -->
 </div>
 

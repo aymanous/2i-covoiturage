@@ -24,68 +24,47 @@ $('.clockpicker').clockpicker();
 </div>
 
 
-  <div class="row">
-
-    <div class="col-md-4">
-
- <form role="form" action="controleur.php">
-
-
-  <div class="form-group">
-    <label for="date">Date du covoiturage : </label>
-    <input type="date" id="date">
-  </div>
-    <div class="form-group">
-    <label for="date">Heure de départ : </label></br>
-    <input type="time">
-  </div>
-    <div class="form-group">
-    <label for="date">Heure d'arrivée : </label></br>
-    <input type="time">
-  </div>
-  <div class="form-group">
-    <label for="date">Prix par passager : </label></br>
-    <input type="number"> €
-  </div>
-  <div class="form-group">
-    <label for="date">Nombre de place libre dans la voiture : </label></br>
-    <input type="number"> places
-  </div>
-
-
-  <button type="submit" name="action" value="createtrajet" class="btn btn-default">Envoyer</button>
-
-
-</form>
-
-  </div>
-
-  <div class="col-md-4 .offset-md-4">
-
-  </br>
-
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="lenslille" value="lenslille" checked>
-  <label class="form-check-label" for="lenslille">
-    LENS <span class="glyphicon glyphicon-arrow-right"></span> LILLE
-  </label>
-</div> </br>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="lillelens" value="lillelens">
-  <label class="form-check-label" for="lillelens">
-    LENS <span class="glyphicon glyphicon-arrow-left"></span> LILLE
-  </label>
-</div>
-
-  </div>
-
-  <div class="col-md-4 .offset-md-4">
-
-
-  </div>
-
-
-
+<div class="row create_trajet_zone">
+  <div class="col-md-5">
+    <form role="form" action="controleur.php" class="create_trajet_form">
+        <div class="form-group">
+          <label for="date">Date du covoiturage : </label>
+          <input type="date" id="date" class="form-control" placeholder="Date de départ">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="date">Heure de départ : </label>
+          <input type="time" class="form-control" placeholder="Date de départ">
+        </div>
+        <div class="form-group">
+          <label for="date">Heure d'arrivée : </label>
+          <input type="time" class="form-control" placeholder="Date de départ">
+        </div>
+        <div class="form-group">
+          <label for="date">Prix par passager : </label>
+          <input type="number" class="form-control" placeholder="Date de départ"> €
+        </div>
+        <div class="form-group">
+          <label for="date">Nombre de place libre dans la voiture : </label>
+          <input type="number" class="form-control" placeholder="Date de départ"> places
+        </div>
+        <div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="radios" id="lenslille" value="lenslille" checked>
+              <label class="form-check-label" for="lenslille">
+              LENS <span class="glyphicon glyphicon-arrow-right"></span> LILLE
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="radios" id="lillelens" value="lillelens">
+              <label class="form-check-label" for="lillelens">
+              <span>LENS</span> <span class="glyphicon glyphicon-arrow-left"></span> <span>LILLE</span> 
+              </label>
+          </div>
+        </div>
+        <button type="submit" name="action" value="createtrajet" class="btn btn-default">Envoyer</button>
+    </form>
+   </div>
 </div>
 
 
