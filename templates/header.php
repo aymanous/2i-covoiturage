@@ -58,6 +58,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
         <ul class="nav navbar-nav">
          	<!-- <li class="active"><a href="index.php?view=accueil">Accueil</a></li> -->
 		<?=mkHeadLink("Accueil","accueil",$view)?>
+		<?=mkHeadLink("Créer Trajet","createtrajet",$view)?>
 		<?php
 		// Si l'utilisateur n'est pas connecte, on affiche un lien de connexion 
 		if (!valider("connecte","SESSION"))
