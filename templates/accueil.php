@@ -43,23 +43,22 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
   {
       $idTr = $value["id"];
       $idConducteur = recupGeneriqueBdd($table,"idConducteur","WHERE id=$idTr");
-      $nbrPlaces = recupGeneriqueBdd($table,"nbrPlaces","WHERE id=$idTr");
+      $nbrPlaces = recupGeneriqueBdd($table,"placeTotal","WHERE id=$idTr");
       $date = recupGeneriqueBdd($table,"date","WHERE id=$idTr");
-      $heure = recupGeneriqueBdd($table,"heure","WHERE id=$idTr");
+      //$heure = recupGeneriqueBdd($table,"heure","WHERE id=$idTr");
       $commentaire = recupGeneriqueBdd($table,"commentaire","WHERE id=$idTr");
       $villeDepart = recupGeneriqueBdd($table,"villeDepart","WHERE id=$idTr");
-      $villeArrivee = recupGini_set('display_errors', 1);
-      error_reporting(E_ALL);eneriqueBdd($table,"villeArrivee","WHERE id=$idTr");
+      $villeArrivee = recupGeneriqueBdd($table,"villeArrive","WHERE id=$idTr");
 
-      $nomConducteur = recupGeneriqueBdd($table,"nom","WHERE id=$idConducteur");
-      $prenomConducteur = recupGeneriqueBdd($table,"prenom","WHERE id=$idConducteur");
+      $nomConducteur = recupGeneriqueBdd("utilisateur","nom","WHERE id=$idConducteur");
+      $prenomConducteur = recupGeneriqueBdd("utilisateur","prenom","WHERE id=$idConducteur");
 
       $nbr++;
 ?>
     <tr>
       <th scope="row"><?php echo $nbr ?></th>
       <td><?php echo $prenomConducteur." ".$nomConducteur ?></td>
-      <td><?php echo $date." à ".$heure ?></td>
+      <td><?php echo $date." à " ?></td>
       <td><?php echo $villeDepart." - ".$villeArrivee ?></td>
       <td><button type="button" class="buttonJoin btn btn-primary">Rejoindre</button></td>
       <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
