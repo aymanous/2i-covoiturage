@@ -112,3 +112,13 @@ h3 {
 .page-header {
     margin-top: 80px;
 }
+
+.inp_prefix {
+    display: flex
+}
+
+.inp_prefix>span {
+    line-height: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+}

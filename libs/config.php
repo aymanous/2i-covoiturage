@@ -11,9 +11,9 @@ $BDD_base="testdb_<nom>";
 
 
 // MACHINE LINUX 
-$BDD_host="localhost";
-$BDD_user="root";
-$BDD_password=""; // vide sous windows
-$BDD_base="bdd_pinf";
+$BDD_host="db683663711.db.1and1.com";
+$BDD_user="dbo683663711";
+$BDD_password="kovoit123"; // vide sous windows
+$BDD_base="db683663711";
 
 ?>
