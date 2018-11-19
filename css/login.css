@@ -9,7 +9,7 @@
     padding: 50px;
     display: flex;
     border: solid 2px #EEEEEE;
-    background: url(https://thebesttravelplaces.com/wp-content/uploads/2015/05/Group-of-Teenagers-Carpooling.jpg);
+    background: url(../src/img/bg_login.jpg);
     background-size: cover;
     background-position: 0 -190px;
 }

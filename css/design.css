@@ -68,7 +68,7 @@ h3 {
 }
 
 .create_trajet_zone {
-    background: url(http://blog.bourse-des-vols.com/wp-content/uploads/2017/11/covoiturage-image-article.jpg);
+    background: url(../src/img/bg_addcarpool.jpg);
     padding: 40px;
     background-size: cover;
 }
