@@ -14,8 +14,6 @@ Les formulaires de toutes les vues générées enverront leurs données vers la 
 	include_once "libs/maLibBootstrap.php";
 	include_once "libs/modele.php";
 
-
-
 	// on récupère le paramètre view éventuel 
 	$view = valider("view"); 
 	/* valider automatise le code suivant :

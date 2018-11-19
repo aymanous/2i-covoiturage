@@ -17,7 +17,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 <div class="row cartouche_zone">
     <div class="cartouche">
       <div class="cart_title">Nombre de covoiturages</div>
-      <div class="cart_num"><span>10</span><span>covoiturages</span></div>
+      <div class="cart_num"><span><?php echo recupGeneriqueBdd("trajet","COUNT(*)") ?></span><span>covoiturages</span></div>
     </div>
     <div class="cartouche">
       <div class="cart_title">Nombre de voyages</div>
@@ -25,7 +25,17 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
     </div>
     <div class="cartouche">
       <div class="cart_title">Nombre de passagers</div>
-      <div class="cart_num"><span>16</span><span>trajets</span></div>
+      <div class="cart_num"><span><?php 
+                                    $count = 0;
+                                    $table = "trajet";
+                                    $result = recupGeneriqueBddFE($table,"id","WHERE idConducteur = 1");
+                                    foreach(parcoursRs($result) as $value)
+                                    {
+                                        $idTr = $value["id"];
+                                        $count += recupGeneriqueBdd("utilisateurTrajet","COUNT(*)","WHERE idTrajet=$idTr");
+                                    }
+                                    echo $count; ?>
+                                    </span><span>trajets</span></div>
     </div>
   </div>
   </div>
