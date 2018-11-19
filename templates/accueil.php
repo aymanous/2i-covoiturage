@@ -1,5 +1,8 @@
-<?php
 
+<?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 //C'est la propriété php_self qui nous l'indique : 
 // Quand on vient de index : 
 // [PHP_SELF] => /chatISIG/index.php 
@@ -21,70 +24,54 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
     </div>
 
     <p class="lead">
-    	
-    
-
-
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
+      <th scope="col">Conducteur</th>
       <th scope="col">Départ</th>
       <th scope="col">Sens</th>
     </tr>
   </thead>
   <tbody>
+<?php 
+  $nbr = 0;
+  $table = "trajet";
+  $result = recupGeneriqueBddFE($table,"id","ORDER BY id DESC");
+  foreach(parcoursRs($result) as $value)
+  {
+      $idTr = $value["id"];
+      $idConducteur = recupGeneriqueBdd($table,"idConducteur","WHERE id=$idTr");
+      $nbrPlaces = recupGeneriqueBdd($table,"nbrPlaces","WHERE id=$idTr");
+      $date = recupGeneriqueBdd($table,"date","WHERE id=$idTr");
+      $heure = recupGeneriqueBdd($table,"heure","WHERE id=$idTr");
+      $commentaire = recupGeneriqueBdd($table,"commentaire","WHERE id=$idTr");
+      $villeDepart = recupGeneriqueBdd($table,"villeDepart","WHERE id=$idTr");
+      $villeArrivee = recupGini_set('display_errors', 1);
+      error_reporting(E_ALL);eneriqueBdd($table,"villeArrivee","WHERE id=$idTr");
+
+      $nomConducteur = recupGeneriqueBdd($table,"nom","WHERE id=$idConducteur");
+      $prenomConducteur = recupGeneriqueBdd($table,"prenom","WHERE id=$idConducteur");
+
+      $nbr++;
+?>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>8h15</td>
-      <td>Lille - Lens</td>
+      <th scope="row"><?php echo $nbr ?></th>
+      <td><?php echo $prenomConducteur." ".$nomConducteur ?></td>
+      <td><?php echo $date." à ".$heure ?></td>
+      <td><?php echo $villeDepart." - ".$villeArrivee ?></td>
       <td><button type="button" class="buttonJoin btn btn-primary">Rejoindre</button></td>
       <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
       <td></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>9h00</td>
-      <td>Lille - Lens</td>
-      <td><button type="button" class="buttonJoin btn btn-primary">Rejoindre</button></td>
-      <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
-      <td><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>17h30</td>
-      <td>Lens - Lille</td>
-      <td><button type="button" class="buttonJoin btn btn-primary" >Rejoindre</button></td>
-      <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
-      <td></td>
-    </tr>
+<?php 
+  }
+?>
   </tbody>
 </table>
-
-
-
-
-
-
-
-    </p>
-
-
-
+</p>
 <script type="text/javascript">
-
-
-
-
 
 $(document).ready(function(){
    

@@ -34,19 +34,19 @@ $('.clockpicker').clockpicker();
         </div>
         <div class="form-group">
           <label for="date">Heure de départ : </label>
-          <input type="time" class="form-control" placeholder="Date de départ">
+          <input type="time" class="form-control" placeholder="Heure de départ">
         </div>
         <div class="form-group">
           <label for="date">Heure d'arrivée : </label>
-          <input type="time" class="form-control" placeholder="Date de départ">
+          <input type="time" class="form-control" placeholder="Heure d'arrivée">
         </div>
         <div class="form-group">
           <label for="date">Prix par passager : </label>
-          <input type="number" class="form-control" placeholder="Date de départ"> €
+          <div class="inp_prefix"><input type="number" class="form-control" placeholder="Prix par passager"><span>€</span></div>
         </div>
         <div class="form-group">
-          <label for="date">Nombre de place libre dans la voiture : </label>
-          <input type="number" class="form-control" placeholder="Date de départ"> places
+          <label for="date">Nombre de places à proposer : </label>
+          <div class="inp_prefix"><input type="number" class="form-control" placeholder="Entre 1 et 4"><span>places</span></div>
         </div>
         <div>
           <div class="form-check">
