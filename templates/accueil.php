@@ -58,7 +58,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
     <tr>
       <th scope="row"><?php echo $nbr ?></th>
       <td><?php echo $prenomConducteur." ".$nomConducteur ?></td>
-      <td><?php echo $date." à " ?></td>
+      <td><?php echo $date ?></td>
       <td><?php echo $villeDepart." - ".$villeArrivee ?></td>
       <td><button type="button" class="buttonJoin btn btn-primary">Rejoindre</button></td>
       <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
