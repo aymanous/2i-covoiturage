@@ -36,9 +36,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
   </thead>
   <tbody>
 <?php 
-  $nbr = 0;
-  $table = "trajet";
-  $result = recupGeneriqueBddFE($table,"id","ORDER BY id DESC");
+  $table = "listeTrajets";
+  $result = recupGeneriqueBddFE($table,"id");
   foreach(parcoursRs($result) as $value)
   {
       $idTr = $value["id"];
@@ -46,21 +45,20 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
       $nbrPlaces = recupGeneriqueBdd($table,"placeTotal","WHERE id=$idTr");
       $date = recupGeneriqueBdd($table,"date","WHERE id=$idTr");
       //$heure = recupGeneriqueBdd($table,"heure","WHERE id=$idTr");
-      $commentaire = recupGeneriqueBdd($table,"commentaire","WHERE id=$idTr");
+      //$commentaire = recupGeneriqueBdd($table,"commentaire","WHERE id=$idTr");
       $villeDepart = recupGeneriqueBdd($table,"villeDepart","WHERE id=$idTr");
       $villeArrivee = recupGeneriqueBdd($table,"villeArrive","WHERE id=$idTr");
 
-      $nomConducteur = recupGeneriqueBdd("utilisateur","nom","WHERE id=$idConducteur");
-      $prenomConducteur = recupGeneriqueBdd("utilisateur","prenom","WHERE id=$idConducteur");
+      $nomConducteur = recupGeneriqueBdd($table,"nom","WHERE id=$idTr");
+      $prenomConducteur = recupGeneriqueBdd($table,"prenom","WHERE id=$idTr");
 
-      $nbr++;
 ?>
     <tr>
-      <th scope="row"><?php echo $nbr ?></th>
+      <th scope="row"><?php echo $idTr ?></th>
       <td><?php echo $prenomConducteur." ".$nomConducteur ?></td>
       <td><?php echo $date ?></td>
       <td><?php echo $villeDepart." - ".$villeArrivee ?></td>
-      <td><button type="button" class="buttonJoin btn btn-primary">Rejoindre</button></td>
+      <td><button type="button" class="buttonJoin btn btn-primary" id="<?php echo $idTr?>">Rejoindre</button></td>
       <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
       <td></td>
     </tr>
@@ -74,17 +72,24 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 $(document).ready(function(){
    
-
+    // Clic sur le bouton rejoindre un trajet
     $(".buttonJoin").on("click", function(){
       if( $(this).attr("class")=="buttonJoin btn btn-primary"){
+        // CASE OU ON JOIN UN TRAJET
+        // Comment traduire une variable js en variable php
+        <?php insertGeneriqueBdd("utilisateurtrajet","idUtilisateur,idTrajet","15,15"); ?>
+        console.log("coucou");
         $(this).attr("class", "buttonJoin btn btn-danger");
         $(this).text("Quitter");
       }
       else {
+        // CASE OU ON QUITTE UN TRAJET
         $(this).attr("class", "buttonJoin btn btn-primary");
         $(this).text("Rejoindre");
       }
     })
+
+
 
 
 
