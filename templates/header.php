@@ -52,22 +52,24 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
         </button>
-	<a class="navbar-brand" href="index.php?view=accueil"><img src="https://dasdigitaleauto.de/wp-content/uploads/2018/04/noun_40506_51A7F9.png" alt=""><span>kovoit</span></a>
+	<a class="navbar-brand" href="index.php?view=accueil"><img src="src/img/logo_icon.png" alt=""><span>kovoit</span></a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
 					<?php
 						echo mkHeadLink("Trajets disponibles","accueil",$view);
 						echo mkHeadLink("Proposer un trajet","createtrajet",$view);
-						echo mkHeadLink("Rechercher un trajet","#",$view);
 
 						// Si l'utilisateur n'est pas connecte, on affiche un lien de connexion 
 						if (valider("connecte","SESSION")){
 							?>
 								<div class="userLogged">
-									<span>Bonjour</span>
-									<span><?php echo recupGeneriqueBdd("utilisateur","prenom","WHERE id=".valider("idUser","SESSION")); ?></span>
-									<span><?php echo recupGeneriqueBdd("utilisateur","nom","WHERE id=".valider("idUser","SESSION")); ?></span>
+									<img src="src/img/no_image_user.png" alt="">
+									<div>
+										<span><?php echo recupGeneriqueBdd("utilisateur","prenom","WHERE id=".valider("idUser","SESSION")); ?></span>
+										<span><?php echo recupGeneriqueBdd("utilisateur","nom","WHERE id=".valider("idUser","SESSION")); ?></span>
+									</div>
+									<a href="controleur.php?action=Logout"><img src="src/img/logout_icon.png" alt=""></a>
 								</div>
 							<?php
 										

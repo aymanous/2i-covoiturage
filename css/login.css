@@ -15,7 +15,7 @@
 }
 
 .login_desc {
-    width: 100%;
+    width: 200%;
 }
 
 label {
@@ -23,9 +23,9 @@ label {
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: lighter;
-    font-size: 19px;
+    font-size: 17px;
     color: #4c4c4c;
-    font-family: 'Amaranth', sans-serif;
+    font-family: 'Lobster', cursive;
 }
 
 .btn_login {}

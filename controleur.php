@@ -50,6 +50,7 @@ session_start();
 						}
 						echo valider("idUser","SESSION");
 					}	
+					$addArgs = "&msgGood=Connexion réussie ! Re bienvenue parmi nous ;)";
 				}
 
 				// On redirigera vers la page index automatiquement
@@ -57,6 +58,7 @@ session_start();
 
 			case 'Logout' :
 				session_destroy();
+				$addArgs = "&msgGood=Déconnexion réussie ! A bientôt ;)";
 			break;
 
 
@@ -73,7 +75,7 @@ session_start();
 	$urlBase = dirname($_SERVER["PHP_SELF"]) . "/index.php";
 	// On redirige vers la page index avec les bons arguments
 
-	// header("Location:" . $urlBase . $addArgs);
+	header("Location:" . $urlBase . "?".$addArgs);
 
 	// On écrit seulement après cette entête
 	ob_end_flush();

@@ -17,11 +17,12 @@
 }
 
 .navbar-brand>span {
-    padding: 25px 10px 0;
+    padding: 25px 15px 0;
     font-size: 50px;
     color: #51a7f9;
     text-shadow: 1px 1px 1px #EEEEEE;
     font-family: 'Lobster', cursive;
+    line-height: 8px;
 }
 
 .navbar-brand {
@@ -85,15 +86,18 @@ h3 {
 
 .cartouche {
     margin-top: 10px;
-    border: solid 1px #EEE;
+    background: #fff;
     margin-right: 10px;
     padding: 10px 18px;
     width: 100%;
+    box-shadow: 0px 0px 35px -17px #000;
+    text-align: center;
 }
 
 .cart_title {
     font-family: 'Francois One', sans-serif;
     font-size: 20px;
+    color: #145283;
 }
 
 .cart_num {
@@ -124,5 +128,33 @@ h3 {
 }
 
 .userLogged{
-    
+    float: right;
+    border-left: solid 1px #EEE;
+    padding: 10px;
+    padding-left: 20px;
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+}
+
+.userLogged > img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: solid 1px #dfdfdf;
+    margin-top: -5px;
+}
+
+.userLogged > a > img {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+.userLogged > div {
+    font-family: 'Lobster', cursive;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #a7a7a7;
 }
