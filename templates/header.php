@@ -56,28 +56,27 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-					<?php
-						echo mkHeadLink("Trajets disponibles","accueil",$view);
-						echo mkHeadLink("Proposer un trajet","createtrajet",$view);
+			<?php
+				echo mkHeadLink("Trajets disponibles","accueil",$view);
+				echo mkHeadLink("Proposer un trajet","createtrajet",$view);
 
-						// Si l'utilisateur n'est pas connecte, on affiche un lien de connexion 
-						if (valider("connecte","SESSION")){
-							?>
-								<div class="userLogged">
-									<img src="src/img/no_image_user.png" alt="">
-									<div>
-										<span><?php echo recupGeneriqueBdd("utilisateur","prenom","WHERE id=".valider("idUser","SESSION")); ?></span>
-										<span><?php echo recupGeneriqueBdd("utilisateur","nom","WHERE id=".valider("idUser","SESSION")); ?></span>
-									</div>
-									<a href="controleur.php?action=Logout"><img src="src/img/logout_icon.png" alt=""></a>
-								</div>
-							<?php
-										
-						} else {
-							echo mkHeadLink("Inscription","#",$view); 
-							echo mkHeadLink("Connexion","login",$view);
-						}
-					?>
+				// Si l'utilisateur n'est pas connecte, on affiche un lien de connexion 
+				if (valider("connecte","SESSION")){
+			?>
+					<div class="userLogged">
+						<img src="src/img/no_image_user.png" alt="">
+						<div>
+							<span><?php echo recupGeneriqueBdd("utilisateur","prenom","WHERE id=".valider("idUser","SESSION")); ?></span>
+							<span><?php echo recupGeneriqueBdd("utilisateur","nom","WHERE id=".valider("idUser","SESSION")); ?></span>
+						</div>
+						<a href="controleur.php?action=Logout"><img src="src/img/logout_icon.png" alt=""></a>
+					</div>
+			<?php								
+				} else {
+					echo mkHeadLink("Inscription","#",$view); 
+					echo mkHeadLink("Connexion","login",$view);
+				}
+			?>
         </ul>
       </div><!--/.nav-collapse -->
   </div>
