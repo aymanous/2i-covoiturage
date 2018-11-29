@@ -56,15 +56,26 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-		<?=mkHeadLink("Accueil","accueil",$view)?>
-		<?=mkHeadLink("Proposer un trajet","createtrajet",$view)?>
-		<?=mkHeadLink("Rechercher un trajet","#",$view)?>
-		<?php
-		// Si l'utilisateur n'est pas connecte, on affiche un lien de connexion 
-		if (!valider("connecte","SESSION"))
-			echo mkHeadLink("Inscription","#",$view); 
-			echo mkHeadLink("Connexion","login",$view); 
-		?>
+					<?php
+						echo mkHeadLink("Trajets disponibles","accueil",$view);
+						echo mkHeadLink("Proposer un trajet","createtrajet",$view);
+						echo mkHeadLink("Rechercher un trajet","#",$view);
+
+						// Si l'utilisateur n'est pas connecte, on affiche un lien de connexion 
+						if (valider("connecte","SESSION")){
+							?>
+								<div class="userLogged">
+									<span>Bonjour</span>
+									<span><?php echo recupGeneriqueBdd("utilisateur","prenom","WHERE id=".valider("idUser","SESSION")); ?></span>
+									<span><?php echo recupGeneriqueBdd("utilisateur","nom","WHERE id=".valider("idUser","SESSION")); ?></span>
+								</div>
+							<?php
+										
+						} else {
+							echo mkHeadLink("Inscription","#",$view); 
+							echo mkHeadLink("Connexion","login",$view);
+						}
+					?>
         </ul>
       </div><!--/.nav-collapse -->
   </div>

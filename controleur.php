@@ -48,7 +48,7 @@ session_start();
 							setcookie("passe","", time()-3600);
 							setcookie("remember",false, time()-3600);
 						}
-
+						echo valider("idUser","SESSION");
 					}	
 				}
 
@@ -73,7 +73,7 @@ session_start();
 	$urlBase = dirname($_SERVER["PHP_SELF"]) . "/index.php";
 	// On redirige vers la page index avec les bons arguments
 
-	header("Location:" . $urlBase . $addArgs);
+	// header("Location:" . $urlBase . $addArgs);
 
 	// On écrit seulement après cette entête
 	ob_end_flush();

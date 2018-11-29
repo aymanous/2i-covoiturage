@@ -17,7 +17,7 @@
 }
 
 .navbar-brand>span {
-    padding: 25px 20px 0;
+    padding: 25px 10px 0;
     font-size: 50px;
     color: #51a7f9;
     text-shadow: 1px 1px 1px #EEEEEE;
@@ -35,7 +35,7 @@
 .navbar-default .navbar-nav>li>a {
     color: #51a7f9;
     font-family: 'Francois One', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -121,4 +121,8 @@ h3 {
     line-height: 30px;
     margin-left: 10px;
     font-weight: bold;
+}
+
+.userLogged{
+    
 }

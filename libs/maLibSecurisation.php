@@ -21,7 +21,7 @@ include_once "modele.php";	// Car on utilise la fonction connecterUtilisateur()
 function verifUser($login,$password)
 {
 	
-	$id = verifUserBdd($login,$password);
+	$id = recupGeneriqueBdd("utilisateur","id","WHERE login='$login' AND password='$password' ");
 
 	if (!$id) return false; 
 
@@ -33,7 +33,6 @@ function verifUser($login,$password)
 	$_SESSION["connecte"] = true;
 	$_SESSION["heureConnexion"] = date("H:i:s");
 	return true;
-	
 }
 
 
