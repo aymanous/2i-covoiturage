@@ -26,4 +26,11 @@ function deleteGeneriqueBdd($table,$condition)
 	$SQL = "DELETE FROM $table $condition";
 	return SQLGetChamp($SQL);
 }
+
+function insertGeneriqueBdd($table,$colonnes,$valeurs)
+{
+	$SQL = "INSERT INTO $table($colonnes) VALUES($valeurs)";
+	return SQLInsert($SQL);	
+}
+
 ?>

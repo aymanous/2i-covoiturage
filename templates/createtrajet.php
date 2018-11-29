@@ -3,8 +3,8 @@
 // Si la page est appelée directement par son adresse, on redirige en passant pas la page index
 if (basename($_SERVER["PHP_SELF"]) != "index.php")
 {
-	header("Location:../index.php?view=login");
-	die("");
+  header("Location:../index.php?view=login");
+  die("");
 }
 
 // Chargement eventuel des données en cookies
@@ -20,7 +20,7 @@ $('.clockpicker').clockpicker();
 </script>
 
 <div class="page-header">
-	<h1>Créer un trajet</h1>
+  <h1>Créer un trajet</h1>
 </div>
 
 
@@ -29,24 +29,24 @@ $('.clockpicker').clockpicker();
     <form role="form" action="controleur.php" class="create_trajet_form">
         <div class="form-group">
           <label for="date">Date du covoiturage : </label>
-          <input type="date" id="date" class="form-control" placeholder="Date de départ">
+          <input type="date" name="date" id="date" class="form-control" placeholder="Date de départ">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
           <label for="date">Heure de départ : </label>
-          <input type="time" class="form-control" placeholder="Heure de départ">
+          <input type="time" name="heureDep" class="form-control" placeholder="Date de départ">
         </div>
         <div class="form-group">
           <label for="date">Heure d'arrivée : </label>
-          <input type="time" class="form-control" placeholder="Heure d'arrivée">
+          <input type="time" name="heureArri" class="form-control" placeholder="Date de départ">
         </div>
         <div class="form-group">
-          <label for="date">Prix par passager : </label>
-          <div class="inp_prefix"><input type="number" class="form-control" placeholder="Prix par passager"><span>€</span></div>
+          <label for="date">Nombre de place libre dans la voiture : </label>
+          <input type="number" name="place" class="form-control" placeholder="Date de départ"> places
         </div>
         <div class="form-group">
-          <label for="date">Nombre de places à proposer : </label>
-          <div class="inp_prefix"><input type="number" class="form-control" placeholder="Entre 1 et 4"><span>places</span></div>
+          <label for="commentaire">Commentaire pour les passagers : </label>
+          <textarea name="commentaire" class="form-control" placeholder="Commentaire" ></textarea> places
         </div>
         <div>
           <div class="form-check">
@@ -62,7 +62,7 @@ $('.clockpicker').clockpicker();
               </label>
           </div>
         </div>
-        <button type="submit" name="action" value="createtrajet" class="btn btn-default">Envoyer</button>
+        <button type="submit" name="action" value="createTrajet" class="btn btn-default">Envoyer</button>
     </form>
    </div>
 </div>
