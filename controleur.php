@@ -61,6 +61,36 @@ session_start();
 				$addArgs = "&msgGood=Déconnexion réussie ! A bientôt ;)";
 			break;
 
+			case 'createTrajet' :
+			
+				if($date = valider("date"))
+				if($heureDep = valider("heureDep"))
+				if($place = valider("place"))
+				if($radios = valider("radios"))
+				if($commentaire = valider("commentaire"))
+				{
+
+					$datetime = $date . " " . $heureDep;
+
+					echo "test";
+
+					$villeDepart = "Lens";
+					$villeArrive = "Lille";
+					
+					
+					if($radios == "lillelens"){
+						$villeDepart = "Lille";
+						$villeArrive = "Lens";
+					}
+
+					$result = insertGeneriqueBdd("trajet","`idConducteur`, `placeTotal`, `date`, `commentaire`, `villeDepart`, `villeArrive`","'5', '$place', '$datetime', '$commentaire', '$villeDepart', '$villeArrive'");
+
+					echo "test2";
+
+					echo "result" . $result;
+			}
+			break;
+
 
 
 
