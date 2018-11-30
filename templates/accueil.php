@@ -73,8 +73,10 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
       <td><?php echo $date ?></td>
       <td><?php echo $villeDepart." - ".$villeArrivee ?></td>
       <?php if($flag == true){
+              if($flag2 == false){
         ?>
       <td><button type="button" class="<?php if($result2){echo 'buttonJoin btn btn-danger';} else{echo 'buttonJoin btn btn-primary';} ?>" id="<?php echo $idTr?>"><?php if($result2){echo 'Quitter';} else{echo 'Rejoindre';} ?></button></td>
+    <?php }else{echo "<td></td>";} ?>
       <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
       <?php if($flag2 == true){ ?>
       <td><button name="<?php echo $idTr ?>" type="button" class="btn deleteTrajet btn-info"><span class="glyphicon glyphicon-trash"></span></button></td>
