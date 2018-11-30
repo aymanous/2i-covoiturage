@@ -69,10 +69,9 @@ session_start();
 				if($radios = valider("radios"))
 				if($commentaire = valider("commentaire"))
 				{
+					$id = $_SESSION["idUser"];
 
 					$datetime = $date . " " . $heureDep;
-
-					echo "test";
 
 					$villeDepart = "Lens";
 					$villeArrive = "Lille";
@@ -83,11 +82,9 @@ session_start();
 						$villeArrive = "Lens";
 					}
 
-					$result = insertGeneriqueBdd("trajet","`idConducteur`, `placeTotal`, `date`, `commentaire`, `villeDepart`, `villeArrive`","'5', '$place', '$datetime', '$commentaire', '$villeDepart', '$villeArrive'");
+					$result = insertGeneriqueBdd("trajet","`idConducteur`, `placeTotal`, `date`, `commentaire`, `villeDepart`, `villeArrive`","'$id', '$place', '$datetime', '$commentaire', '$villeDepart', '$villeArrive'");
 
-					echo "test2";
-
-					echo "result" . $result;
+					$addArgs = "&msgGood=Création de trajet réussie";
 			}
 			break;
 
