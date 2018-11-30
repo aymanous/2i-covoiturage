@@ -5,8 +5,9 @@
 }
 
 .navbar-brand>img {
-    width: 62px;
-    height: 63px;
+    width: 58px;
+    height: 45px;
+    margin-top: 5px;
 }
 
 .navbar {
@@ -16,17 +17,35 @@
     border: 0;
 }
 
-.navbar-brand>span {
-    padding: 25px 15px 0;
-    font-size: 50px;
-    color: #51a7f9;
-    text-shadow: 1px 1px 1px #EEEEEE;
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #4faffc;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.txt_logo{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 10px; 
+}
+
+.txt_logo>p:first-of-type {
+    font-size: 45px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #1974bd;
     font-family: 'Lobster', cursive;
-    line-height: 8px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+.txt_logo>p:nth-of-type(2) {
+    font-size: 14px;
+    color: #f6f6f6;
 }
 
 .navbar-brand {
-    padding: 5px 15px;
+    padding: 10px 15px;
 }
 
 .nav {
@@ -34,22 +53,22 @@
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #51a7f9;
+    color: #ffffff;
     font-family: 'Francois One', sans-serif;
     font-size: 20px;
 }
 
 .navbar-default .navbar-nav>.active>a {
-    background: #51a7f9;
-    color: #ffffff;
-    font-weight: lighter;
+    background: #ffffff;
+    color: #03A9F4;
+    border-radius: 3px;
 }
 
 .navbar-fixed-top .navbar-collapse {
     height: 85px !important;
-    background: #FFF;
     padding: 18px;
     box-shadow: 0px 4px 13px -8px #000;
+    background-image: linear-gradient(#03A9F4, #0094d7);
 }
 
 h1 {
@@ -87,7 +106,6 @@ h3 {
 .cartouche {
     margin-top: 10px;
     background: #fff;
-    margin-right: 10px;
     padding: 10px 18px;
     width: 100%;
     box-shadow: 0px 0px 35px -17px #000;
@@ -101,10 +119,13 @@ h3 {
 }
 
 .cart_num {
-    font-size: 23px;
+    font-size: 18px;
     color: #51a6f8;
-    font-family: 'Amaranth', sans-serif;
-    margin-top: -5px;
+    margin-top: -2px;
+}
+
+.container{
+
 }
 
 .cart_num>span:nth-child(1) {}
@@ -129,7 +150,7 @@ h3 {
 
 .userLogged{
     float: right;
-    border-left: solid 1px #EEE;
+    border-left: solid 1px #58a9ea;
     padding: 10px;
     padding-left: 20px;
     height: 100%;
@@ -143,11 +164,11 @@ h3 {
     border-radius: 100%;
     border: solid 1px #dfdfdf;
     margin-top: -5px;
+    background: #FFF;
 }
 
 .userLogged > a > img {
-    width: 18px;
-    height: 18px;
+    width: 22px;
     margin-top: 2px;
     margin-left: 10px;
 }
@@ -156,15 +177,17 @@ h3 {
     font-family: 'Lobster', cursive;
     margin-left: 10px;
     font-size: 18px;
-    color: #a7a7a7;
+    color: #ffffff;
 }
 
 .notifMsg{
     right: 0;
-    top: 100px;
+    top: 97px;
     padding: 15px;
-    font-family: 'Francois One', sans-serif;
     position: fixed;
+    border-bottom: solid 3px #FFF;
+    border-top: solid 3px #FFF;
+    font-weight: bold;
 }
 
 .msgGood{
@@ -174,7 +197,8 @@ h3 {
 }
 
 .msgBad{
-    background: #ff0000;
-    color: #ffffff;
+    background: #fff5f5;
+    color: #ff0000;
     border-left: solid 2px;
 }
+

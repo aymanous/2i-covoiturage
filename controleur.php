@@ -49,11 +49,14 @@ session_start();
 							setcookie("remember",false, time()-3600);
 						}
 						echo valider("idUser","SESSION");
+						$addArgs = "&msgGood=Connexion réussie ! Re bienvenue parmi nous ;)";
+					}
+					else{
+						$addArgs = "&msgBad=Identifiant ou mot de passe incorrect.";
+						$view = "login";
 					}	
-					$addArgs = "&msgGood=Connexion réussie ! Re bienvenue parmi nous ;)";
 				}
-
-				// On redirigera vers la page index automatiquement
+				
 			break;
 
 			case 'Logout' :
@@ -102,7 +105,7 @@ session_start();
 	$urlBase = dirname($_SERVER["PHP_SELF"]) . "/index.php";
 	// On redirige vers la page index avec les bons arguments
 
-	header("Location:" . $urlBase . "?".$addArgs);
+	header("Location:" . $urlBase . "?view=". $view ."". $addArgs);
 
 	// On écrit seulement après cette entête
 	ob_end_flush();

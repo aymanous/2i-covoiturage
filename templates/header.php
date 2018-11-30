@@ -22,7 +22,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 	<!-- Liaisons aux fichiers css de Bootstrap -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Francois+One|Lobster|Amaranth" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Francois+One|Lobster|Amaranth|Krub" rel="stylesheet">
 	<link href="css/design.css" rel="stylesheet" />
 	<link href="css/sticky-footer.css" rel="stylesheet" />
 	<!--[if lt IE 9]>
@@ -52,7 +52,14 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
         </button>
-	<a class="navbar-brand" href="index.php?view=accueil"><img src="src/img/logo_icon.png" alt=""><span>kovoit</span></a>
+		<a class="navbar-brand" href="index.php?view=accueil">
+			<img src="src/img/logo_icon.png">
+			<div class="txt_logo">
+				<p>kovoit</p>
+				<p>Covoiturage Inter-Centrale</p>
+			</div>
+
+		</a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
