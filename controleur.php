@@ -60,6 +60,7 @@ session_start();
 			break;
 
 			case 'createTrajet' :
+			
 				if($date = valider("date"))
 				if($heureDep = valider("heureDep"))
 				if($place = valider("place"))
