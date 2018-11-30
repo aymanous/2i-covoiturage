@@ -158,3 +158,23 @@ h3 {
     font-size: 18px;
     color: #a7a7a7;
 }
+
+.notifMsg{
+    right: 0;
+    top: 100px;
+    padding: 15px;
+    font-family: 'Francois One', sans-serif;
+    position: fixed;
+}
+
+.msgGood{
+    background: #f0fff0;
+    color: #1c851c;
+    border-left: solid 2px;
+}
+
+.msgBad{
+    background: #ff0000;
+    color: #ffffff;
+    border-left: solid 2px;
+}

@@ -1,5 +1,9 @@
 <?php
 
+if(!valider("idUser","SESSION")){
+  rediriger("index.php?view=login&msgBad=Veuillez vous connecter pour proposer un trajet !");
+}
+
 // Si la page est appelée directement par son adresse, on redirige en passant pas la page index
 if (basename($_SERVER["PHP_SELF"]) != "index.php")
 {
@@ -30,7 +34,6 @@ $('.clockpicker').clockpicker();
         <div class="form-group">
           <label for="date">Date du covoiturage : </label>
           <input type="date" name="date" id="date" class="form-control" placeholder="Date de départ">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
           <label for="date">Heure de départ : </label>
@@ -41,12 +44,12 @@ $('.clockpicker').clockpicker();
           <input type="time" name="heureArri" class="form-control" placeholder="Date de départ">
         </div>
         <div class="form-group">
-          <label for="date">Nombre de place libre dans la voiture : </label>
-          <input type="number" name="place" class="form-control" placeholder="Date de départ"> places
+          <label for="date">Nombre de places à proposer : </label>
+          <input type="number" name="place" class="form-control" placeholder="max 5">
         </div>
         <div class="form-group">
           <label for="commentaire">Commentaire pour les passagers : </label>
-          <textarea name="commentaire" class="form-control" placeholder="Commentaire" ></textarea> places
+          <textarea name="commentaire" class="form-control" placeholder="Commentaire" ></textarea>
         </div>
         <div>
           <div class="form-check">
@@ -58,11 +61,11 @@ $('.clockpicker').clockpicker();
           <div class="form-check">
               <input class="form-check-input" type="radio" name="radios" id="lillelens" value="lillelens">
               <label class="form-check-label" for="lillelens">
-              <span>LENS</span> <span class="glyphicon glyphicon-arrow-left"></span> <span>LILLE</span> 
+              <span>LILLE</span> <span class="glyphicon glyphicon-arrow-right"></span> <span>LENS</span> 
               </label>
           </div>
         </div>
-        <button type="submit" name="action" value="createTrajet" class="btn btn-default">Envoyer</button>
+        <button type="submit" name="action" value="createTrajet" class="btn btn-default">Valider</button>
     </form>
    </div>
 </div>

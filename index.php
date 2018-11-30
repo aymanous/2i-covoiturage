@@ -34,6 +34,12 @@ Les formulaires de toutes les vues générées enverront leurs données vers la 
 
 	include("templates/header.php");
 
+	if($msg = valider("msgGood") || $msg = valider("msgBad")){
+		if($msg = valider("msgGood")){ $classMsg="msgGood";} 
+		else if($msg = valider("msgBad")){$classMsg="msgBad";}
+		echo "<div class=\"notifMsg ".$classMsg."\">".$msg."</div>";
+	}
+
 	// En fonction de la vue à afficher, on appelle tel ou tel template
 	switch($view)
 	{		
@@ -43,19 +49,8 @@ Les formulaires de toutes les vues générées enverront leurs données vers la 
 				include("templates/$view.php");
 	}
 
-
 	// Dans tous les cas, on affiche le pied de page
 	// Qui contient les coordonnées de la personne si elle est connectée
 	include("templates/footer.php");
 
-
-	
 ?>
-
-
-
-
-
-
-
-
