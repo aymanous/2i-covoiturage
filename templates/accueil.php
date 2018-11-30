@@ -40,6 +40,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
   $result = recupGeneriqueBddFE($table,"id");
   foreach(parcoursRs($result) as $value)
   {
+      $idUtilisateur = $_SESSION['idUser'];
       $idTr = $value["id"];
       $idConducteur = recupGeneriqueBdd($table,"idConducteur","WHERE id=$idTr");
       $nbrPlaces = recupGeneriqueBdd($table,"placeTotal","WHERE id=$idTr");
@@ -52,13 +53,15 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
       $nomConducteur = recupGeneriqueBdd($table,"nom","WHERE id=$idTr");
       $prenomConducteur = recupGeneriqueBdd($table,"prenom","WHERE id=$idTr");
 
+      $result2 = recupGeneriqueBdd("utilisateurtrajet","id","WHERE idTrajet=$idTr AND idUtilisateur=$idUtilisateur");
+
 ?>
     <tr>
       <th scope="row"><?php echo $idTr ?></th>
       <td><?php echo $prenomConducteur." ".$nomConducteur ?></td>
       <td><?php echo $date ?></td>
       <td><?php echo $villeDepart." - ".$villeArrivee ?></td>
-      <td><button type="button" class="buttonJoin btn btn-primary" id="<?php echo $idTr?>">Rejoindre</button></td>
+      <td><button type="button" class="<?php if($result2){echo 'buttonJoin btn btn-danger';} else{echo 'buttonJoin btn btn-primary';} ?>" id="<?php echo $idTr?>"><?php if($result2){echo 'Quitter';} else{echo 'Rejoindre';} ?></button></td>
       <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
       <td></td>
     </tr>
@@ -68,43 +71,3 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
   </tbody>
 </table>
 </p>
-<script type="text/javascript">
-
-$(document).ready(function(){
-   
-    // Clic sur le bouton rejoindre un trajet
-    $(".buttonJoin").on("click", function(){
-      if( $(this).attr("class")=="buttonJoin btn btn-primary"){
-        // CASE OU ON JOIN UN TRAJET
-        // Comment traduire une variable js en variable php
-        <?php insertGeneriqueBdd("utilisateurtrajet","idUtilisateur,idTrajet","15,15"); ?>
-        console.log("coucou");
-        $(this).attr("class", "buttonJoin btn btn-danger");
-        $(this).text("Quitter");
-      }
-      else {
-        // CASE OU ON QUITTE UN TRAJET
-        $(this).attr("class", "buttonJoin btn btn-primary");
-        $(this).text("Rejoindre");
-      }
-    })
-
-
-
-
-
-    $(".travelDetails").on("click", function(){
-      alert("Details pour le trajet " + $(this).attr("class"))
-    })
-
-
-
-
-
-});
-
-
-
-
-
-</script>
