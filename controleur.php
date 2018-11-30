@@ -116,6 +116,14 @@ session_start();
 
 			break;
 
+			case 'deleteTrajet' : 
+				if($idTrajet = valider('idTrajet')){
+
+					deleteGeneriqueBdd("trajet","WHERE id=$idTrajet");
+
+				}
+			break;
+
 
 
 

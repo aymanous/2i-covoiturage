@@ -33,6 +33,23 @@ $(document).ready(function(){
     })
 
 
+    $(".deleteTrajet").on("click", function(){
+
+        console.log($(this).attr("name"));
+        // CASE OU ON JOIN UN TRAJET
+        // Comment traduire une variable js en variable php
+        //<?php insertGeneriqueBdd("utilisateurtrajet","idUtilisateur,idTrajet","15,15"); ?>
+
+        $(this).parent().parent().hide();
+
+        $.ajax({  url:"controleur.php",
+            data: {"action":"deleteTrajet",
+                "idTrajet" : $(this).attr("name")}
+        });
+      
+    })
+
+
 
 
 

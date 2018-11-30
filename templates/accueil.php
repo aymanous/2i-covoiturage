@@ -40,16 +40,20 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
   $result = recupGeneriqueBddFE($table,"id");
   foreach(parcoursRs($result) as $value)
   {
+      $flag = false;
+      $flag2 = false;
       $idTr = $value["id"];
+      $idConducteur = recupGeneriqueBdd($table,"idConducteur","WHERE id=$idTr");
+
       if(valider('idUser','SESSION')){
         $idUtilisateur = $_SESSION['idUser'];
         $flag = true;
         $result2 = recupGeneriqueBdd("utilisateurtrajet","id","WHERE idTrajet=$idTr AND idUtilisateur=$idUtilisateur");
+        if(valider('idUser','SESSION') == $idConducteur){
+          $flag2 = true;
+        }
       }
-      else{
-        $flag = false;
-      }
-      $idConducteur = recupGeneriqueBdd($table,"idConducteur","WHERE id=$idTr");
+
       $nbrPlaces = recupGeneriqueBdd($table,"placeTotal","WHERE id=$idTr");
       $date = recupGeneriqueBdd($table,"date","WHERE id=$idTr");
       //$heure = recupGeneriqueBdd($table,"heure","WHERE id=$idTr");
@@ -72,7 +76,9 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
         ?>
       <td><button type="button" class="<?php if($result2){echo 'buttonJoin btn btn-danger';} else{echo 'buttonJoin btn btn-primary';} ?>" id="<?php echo $idTr?>"><?php if($result2){echo 'Quitter';} else{echo 'Rejoindre';} ?></button></td>
       <td><button type="button" class="btn btn-info"><span class="travelDetails glyphicon glyphicon-eye-open"></span></button></td>
-    <?php } ?>
+      <?php if($flag2 == true){ ?>
+      <td><button name="<?php echo $idTr ?>" type="button" class="btn deleteTrajet btn-info"><span class="glyphicon glyphicon-trash"></span></button></td>
+    <?php } } ?>
       <td></td>
     </tr>
 <?php 
