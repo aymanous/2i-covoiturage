@@ -32,5 +32,4 @@ function insertGeneriqueBdd($table,$colonnes,$valeurs)
 	$SQL = "INSERT INTO $table($colonnes) VALUES($valeurs)";
 	return SQLInsert($SQL);	
 }
-
 ?>
