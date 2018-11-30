@@ -21,7 +21,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
       </div>
       <div class="cartouche">
         <div class="cart_title">Nombre de voyages</div>
-        <div class="cart_num"><span>12</span><span>voyages</span></div>
+        <div class="cart_num"><span><?php echo recupGeneriqueBddFunction("nbVoyages(".valider("idUser","SESSION").")"); ?></span><span>voyages</span></div>
       </div>
       <div class="cartouche">
         <div class="cart_title">Nombre de passagers</div>
