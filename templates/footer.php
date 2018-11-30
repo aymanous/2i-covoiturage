@@ -25,19 +25,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
       </div>
       <div class="cartouche">
         <div class="cart_title">Nombre de passagers</div>
-        <div class="cart_num"> 
-          <?php 
-            $count = 0;
-            $table = "trajet";
-            $result = recupGeneriqueBddFE($table,"id","WHERE idConducteur = 1");
-            foreach(parcoursRs($result) as $value)
-            {
-                $idTr = $value["id"];
-                $count += recupGeneriqueBdd("utilisateurTrajet","COUNT(*)","WHERE idTrajet=$idTr");
-            }
-            echo $count." trajets";
-          ?>
-        </div>
+        <div class="cart_num"><span><?php echo recupGeneriqueBddFunction("nbPassagers(".valider("idUser","SESSION").")"); ?></span><span>passagers</span></div>
       </div>
     </div>
     </div>
