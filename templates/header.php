@@ -31,6 +31,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 	<![endif]-->
 
 	<script src="js/jquery.js"></script>
+	<script src="js/script.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	
 
@@ -64,12 +65,12 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 				if (valider("connecte","SESSION")){
 			?>
 					<div class="userLogged">
-						<img style="width:30px;height:30px;" src="src/img/no_image_user.png" alt="">
+						<img src="src/img/no_image_user.png" alt="">
 						<div>
 							<span><?php echo recupGeneriqueBdd("utilisateur","prenom","WHERE id=".valider("idUser","SESSION")); ?></span>
 							<span><?php echo recupGeneriqueBdd("utilisateur","nom","WHERE id=".valider("idUser","SESSION")); ?></span>
 						</div>
-						<a href="controleur.php?action=Logout"><img style="width:30px;height:30px;" src="src/img/logout_icon.png" alt=""></a>
+						<a href="controleur.php?action=Logout"><img src="src/img/logout_icon.png" alt=""></a>
 					</div>
 			<?php								
 				} else {

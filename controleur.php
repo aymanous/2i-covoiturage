@@ -68,6 +68,7 @@ session_start();
 				if($place = valider("place"))
 				if($radios = valider("radios"))
 				if($commentaire = valider("commentaire"))
+				if($_SESSION["idUser"])
 				{
 					$id = $_SESSION["idUser"];
 
@@ -86,6 +87,30 @@ session_start();
 
 					$addArgs = "&msgGood=Création de trajet réussie";
 			}
+			break;
+
+			case 'setPresent' :
+
+				if($idTrajet = valider("idTrajet"))
+				if($_SESSION["idUser"])
+				{
+					$idUser = $_SESSION["idUser"];
+
+					insertGeneriqueBdd("utilisateurtrajet","idUtilisateur,idTrajet","'$idUser','$idTrajet'");
+				}
+
+			break;
+
+			case 'setNotPresent' :
+
+				if($idTrajet = valider("idTrajet"))
+				if($_SESSION["idUser"])
+				{
+					$idUser = $_SESSION["idUser"];
+
+					deleteGeneriqueBdd("utilisateurtrajet","WHERE idUtilisateur=$idUser AND idTrajet=$idTrajet");
+				}
+
 			break;
 
 
