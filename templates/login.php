@@ -35,12 +35,28 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
       <div class="checkbox">
           <label><input type="checkbox" name="remember" <?php echo $checked;?> >Se souvenir de moi</label>
       </div>
+      <div class="msgAsyncLogin"></div>
       <button type="submit" name="action" value="Connexion" class="btn btn-default btn_login">Connexion</button>
     </form>
   </div>
-</div>
+</div>  
 
+<script>
+  $(".btn_login").attr("disabled",   "disabled");
+  onOffBtn("#email");
+  onOffBtn("#pwd");
 
+  function onOffBtn(idInp){
+    $(idInp).keyup(function(){
+      if($("#email").val().length > 0 && $("#pwd").val().length > 0){
+        $(".btn_login").removeAttr("disabled");
+      }else{
+        $(".btn_login").attr("disabled", "disabled");
+      }
+    });
+  }
+ 
+</script>
 
 
 

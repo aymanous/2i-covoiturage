@@ -25,8 +25,6 @@ $(document).ready(function(){
                 "idTrajet" : $(this).attr("id")}
         });
 
-        console.log("salut delete");
-
         $(this).attr("class", "buttonJoin btn btn-primary");
         $(this).text("Rejoindre");
       }
@@ -54,7 +52,7 @@ $(document).ready(function(){
     })
 
     setTimeout(function(){
-        $(".notifMsg").hide(); 
+        $(".notifMsg").hide();
     },3000);
 
 });
