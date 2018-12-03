@@ -57,6 +57,42 @@ $(document).ready(function(){
       alert("Details pour le trajet " + $(this).attr("class"))
     })
 
+    function deleteMessage(){
+      $("#warningCreaTrajet").fadeOut();
+   };
+
+
+    $("#submitCreateTrajet").on("click", function(){
+        if($("#dateCreaTrajet").val() && $("#heureDepCreaTrajet").val() && $("#placeCreaTrajet").val() && $("#commentaireCreaTrajet").val()){
+
+
+      console.log("creation du trajet");
+      console.log($('input[name=radios]:checked', '#create_trajet_form').val())
+      $.ajax({  url:"controleur.php",
+            data: {"action":"createTrajet",
+                "date" : $("#dateCreaTrajet").val(),
+                "heureDep" : $("#heureDepCreaTrajet").val(),
+                "place" : $("#placeCreaTrajet").val(),
+                "commentaire" : $("#commentaireCreaTrajet").val(),
+                "radios" : $('input[name=radios]:checked', '#create_trajet_form').val(),
+                callback : function(){
+
+                            $("#create_trajet_form").empty();
+                            $("#create_trajet_form").append("<p>bravo bg tu as créé un trajet sur un site hyper cool</p>")
+
+                        }
+            }
+        });
+  }else{
+    $("#checkCity").after("<div id='warningCreaTrajet' class='alert alert-danger' role='alert'>Vous devez remplir l'ensemble des champs</div>");
+    window.setTimeout( deleteMessage , 3000 );
+    
+    
+  }
+    })
+
+
+
 
 
 
