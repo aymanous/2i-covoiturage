@@ -20,6 +20,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 ?>
 
     <div class="page-header">
+      
       <h1>Liste des trajets</h1>
     </div>
 
@@ -88,4 +89,5 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 ?>
   </tbody>
 </table>
+
 </p>

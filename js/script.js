@@ -1,4 +1,12 @@
 $(document).ready(function(){
+
+        var nbCovoit = parseInt($("#nbCovoitCart").text());
+        if(nbCovoit<2){
+             $("#covoitWordS").empty();
+         $("#covoitWordS").append("covoiturage");
+         $("#covoitWordSTittle").empty();
+            $("#covoitWordSTittle").append("Nombre de covoiturage");
+         }
    
     // Clic sur le bouton rejoindre un trajet
     $(".buttonJoin").on("click", function(){
@@ -44,7 +52,21 @@ $(document).ready(function(){
 
         $.ajax({  url:"controleur.php",
             data: {"action":"deleteTrajet",
-                "idTrajet" : $(this).attr("name")}
+                "idTrajet" : $(this).attr("name"),
+            callback : function(){
+
+                            var nbCovoit = parseInt($("#nbCovoitCart").text());
+                            nbCovoit--;
+                            $("#nbCovoitCart").empty();
+                            $("#nbCovoitCart").append(nbCovoit);
+                            if(nbCovoit<2){
+                                $("#covoitWordS").empty();
+                            $("#covoitWordS").append("covoiturage");
+                            $("#covoitWordSTittle").empty();
+                            $("#covoitWordSTittle").append("Nombre de covoiturage");
+                            }
+
+                        }}
         });
       
     })
@@ -56,6 +78,8 @@ $(document).ready(function(){
     $(".travelDetails").on("click", function(){
       alert("Details pour le trajet " + $(this).attr("class"))
     })
+
+
 
     function deleteMessage(){
       $("#warningCreaTrajet").fadeOut();
@@ -77,6 +101,16 @@ $(document).ready(function(){
                 "radios" : $('input[name=radios]:checked', '#create_trajet_form').val(),
                 callback : function(){
 
+                            var nbCovoit = parseInt($("#nbCovoitCart").text());
+                            nbCovoit++;
+                            $("#nbCovoitCart").empty();
+                            $("#nbCovoitCart").append(nbCovoit);
+                            if(nbCovoit>1){
+                                 $("#covoitWordS").empty();
+                             $("#covoitWordS").append("covoiturages");
+                             $("#covoitWordSTittle").empty();
+                                $("#covoitWordSTittle").append("Nombre de covoiturages");
+                             }
                             $("#create_trajet_form").empty();
                             $("#create_trajet_form").append("<p>bravo bg tu as créé un trajet sur un site hyper cool</p>")
 
