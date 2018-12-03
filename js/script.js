@@ -49,16 +49,12 @@ $(document).ready(function(){
       
     })
 
-
-
-
-
     $(".travelDetails").on("click", function(){
       alert("Details pour le trajet " + $(this).attr("class"))
     })
 
-
-
-
+    setTimeout(function(){
+        $(".notifMsg").hide();
+    },3000);
 
 });
