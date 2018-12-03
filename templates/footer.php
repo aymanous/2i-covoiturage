@@ -16,8 +16,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 <div class="container">
   <div class="row cartouche_zone">
       <div class="cartouche">
-        <div class="cart_title">Nombre de covoiturages</div>
-        <div class="cart_num"><span><?php echo recupGeneriqueBdd("trajet","COUNT(*)") ?></span><span>covoiturages</span></div>
+        <div id="covoitWordSTittle" class="cart_title">Nombre de covoiturages</div>
+        <div class="cart_num"><span id="nbCovoitCart" ><?php echo recupGeneriqueBdd("trajet","COUNT(*)") ?></span><span id="covoitWordS">covoiturages</span></div>
       </div>
       <div class="cartouche">
         <div class="cart_title">Nombre de voyages</div>

@@ -19,9 +19,6 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
 ?>
 
 
-<script type="text/javascript">
-$('.clockpicker').clockpicker();
-</script>
 
 <div class="page-header">
   <h1>Créer un trajet</h1>
@@ -30,28 +27,24 @@ $('.clockpicker').clockpicker();
 
 <div class="row create_trajet_zone">
   <div class="col-md-5">
-    <form role="form" action="controleur.php" class="create_trajet_form">
+    <form role="form" action="controleur.php" id="create_trajet_form" class="create_trajet_form">
         <div class="form-group">
           <label for="date">Date du covoiturage : </label>
-          <input type="date" name="date" id="date" class="form-control" placeholder="Date de départ">
+          <input type="date" name="date" id="dateCreaTrajet" class="form-control" placeholder="Date de départ">
         </div>
         <div class="form-group">
           <label for="date">Heure de départ : </label>
-          <input type="time" name="heureDep" class="form-control" placeholder="Date de départ">
-        </div>
-        <div class="form-group">
-          <label for="date">Heure d'arrivée : </label>
-          <input type="time" name="heureArri" class="form-control" placeholder="Date de départ">
+          <input type="time" name="heureDep" id="heureDepCreaTrajet" class="form-control" placeholder="Date de départ">
         </div>
         <div class="form-group">
           <label for="date">Nombre de places à proposer : </label>
-          <input type="number" name="place" class="form-control" placeholder="max 5">
+          <input type="number" name="place" id="placeCreaTrajet" class="form-control" placeholder="max 5">
         </div>
         <div class="form-group">
           <label for="commentaire">Commentaire pour les passagers : </label>
-          <textarea name="commentaire" class="form-control" placeholder="Commentaire" ></textarea>
+          <textarea name="commentaire" id="commentaireCreaTrajet" class="form-control" placeholder="Commentaire" ></textarea>
         </div>
-        <div>
+        <div id="checkCity">
           <div class="form-check">
               <input class="form-check-input" type="radio" name="radios" id="lenslille" value="lenslille" checked>
               <label class="form-check-label" for="lenslille">
@@ -65,8 +58,9 @@ $('.clockpicker').clockpicker();
               </label>
           </div>
         </div>
-        <button type="submit" name="action" value="createTrajet" class="btn btn-default">Valider</button>
     </form>
+            <button id="submitCreateTrajet" name="action" value="createTrajet" class="btn btn-default">Valider</button>
+
    </div>
 </div>
 
