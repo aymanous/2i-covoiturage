@@ -33,8 +33,6 @@ $(document).ready(function(){
                 "idTrajet" : $(this).attr("id")}
         });
 
-        console.log("salut delete");
-
         $(this).attr("class", "buttonJoin btn btn-primary");
         $(this).text("Rejoindre");
       }
@@ -71,13 +69,10 @@ $(document).ready(function(){
       
     })
 
-
-
-
-
     $(".travelDetails").on("click", function(){
       alert("Details pour le trajet " + $(this).attr("class"))
     })
+
 
 
 
@@ -126,9 +121,8 @@ $(document).ready(function(){
     })
 
 
-
-
-
-
+    setTimeout(function(){
+        $(".notifMsg").hide();
+    },3000);
 
 });
