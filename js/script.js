@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
         var nbCovoit = parseInt($("#nbCovoitCart").text());
         if(nbCovoit<2){
              $("#covoitWordS").empty();
@@ -107,8 +108,11 @@ $(document).ready(function(){
                                 $("#covoitWordSTittle").append("Nombre de covoiturages");
                              }
                             $("#create_trajet_form").empty();
-                            $("#create_trajet_form").append("<p>bravo bg tu as créé un trajet sur un site hyper cool</p>")
-
+                            $("#create_trajet_form").append("<div id='warningCreaTrajet' class='alert alert-success' role='alert'>Votre trajet a bien été ajouté.</div>")
+                            $("#submitCreateTrajet").hide();
+                            setTimeout(function(){
+                                window.location.replace("index.php");
+                            },3000);
                         }
             }
         });
@@ -123,6 +127,15 @@ $(document).ready(function(){
 
     setTimeout(function(){
         $(".notifMsg").hide();
+    },3000);
+
+
+
+    $("#solutionjoke").hide();
+    setTimeout(function(){
+        $("#errorjoke").hide();
+        $("#solutionjoke").show();
+        
     },3000);
 
 });

@@ -35,6 +35,9 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
       <th scope="col">Sens</th>
     </tr>
   </thead>
+  <p style="color:red;" id="errorjoke"><strong>Fatal error: Call to undefined function parcsRs()</strong> in C:\AppServ\www\localhost\ECL\WEB\2i-covoiturage\templates\accueil.php on line 42
+</p>
+<p style="color:green; " id="solutionjoke"><strong>Non en vrai on est trop bon pour avoir des erreurs</p>
   <tbody>
 <?php 
   $table = "listeTrajets";

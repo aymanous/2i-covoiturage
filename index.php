@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ALL);
 
 /*
 Cette page génère les différentes vues de l'application en utilisant des templates situés dans le répertoire "templates". Un template ou 'gabarit' est un fichier php qui génère une partie de la structure XHTML d'une page. 
