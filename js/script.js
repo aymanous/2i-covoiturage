@@ -54,7 +54,7 @@ $(document).ready(function(){
     })
 
     setTimeout(function(){
-        $(".notifMsg").hide();
+        $(".notifMsg").hide(); 
     },3000);
 
 });
