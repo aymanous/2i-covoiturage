@@ -11,7 +11,7 @@ session_start();
 	if ($action = valider("action"))
 	{
 		ob_start ();
-		echo "Action = '$action' <br />";
+		// echo "Action = '$action' <br />";
 		// ATTENTION : le codage des caractères peut poser PB si on utilise des actions comportant des accents... 
 		// A EVITER si on ne maitrise pas ce type de problématiques
 
@@ -48,7 +48,6 @@ session_start();
 							setcookie("passe","", time()-3600);
 							setcookie("remember",false, time()-3600);
 						}
-						echo valider("idUser","SESSION");
 						$addArgs = "&msgGood=Connexion réussie ! Re bienvenue parmi nous ;)";
 					}
 					else{
@@ -114,6 +113,14 @@ session_start();
 					deleteGeneriqueBdd("utilisateurtrajet","WHERE idUtilisateur=$idUser AND idTrajet=$idTrajet");
 				}
 
+			break;
+
+			case 'deleteTrajet' : 
+				if($idTrajet = valider('idTrajet')){
+
+					deleteGeneriqueBdd("trajet","WHERE id=$idTrajet");
+
+				}
 			break;
 
 

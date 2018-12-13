@@ -16,8 +16,13 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 <div class="container">
   <div class="row cartouche_zone">
       <div class="cartouche">
+<<<<<<< HEAD
         <div class="cart_title">Nombre de covoiturages</div>
         <div class="cart_num"><span><?php echo recupGeneriqueBddFunction("nbCovoiturages(".valider("idUser","SESSION").")"); ?></span><span>covoiturages</span></div>
+=======
+        <div id="covoitWordSTittle" class="cart_title">Nombre de covoiturages</div>
+        <div class="cart_num"><span id="nbCovoitCart" ><?php echo recupGeneriqueBdd("trajet","COUNT(*)") ?></span><span id="covoitWordS">covoiturages</span></div>
+>>>>>>> 652390a9b95d879cc71ba0f20b65bde8e31c7daf
       </div>
       <div class="cartouche">
         <div class="cart_title">Nombre de voyages</div>

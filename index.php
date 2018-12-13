@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ALL);
 
 /*
 Cette page génère les différentes vues de l'application en utilisant des templates situés dans le répertoire "templates". Un template ou 'gabarit' est un fichier php qui génère une partie de la structure XHTML d'une page. 
@@ -49,8 +50,11 @@ Les formulaires de toutes les vues générées enverront leurs données vers la 
 				include("templates/$view.php");
 	}
 
-	// Dans tous les cas, on affiche le pied de page
-	// Qui contient les coordonnées de la personne si elle est connectée
-	include("templates/footer.php");
+	if(valider("idUser","SESSION")){
+		// Dans tous les cas, on affiche le pied de page
+		// Qui contient les coordonnées de la personne si elle est connectée
+		include("templates/footer.php");
+	}
+
 
 ?>
