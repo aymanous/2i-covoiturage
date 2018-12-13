@@ -16,28 +16,21 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 <div class="container">
   <div class="row cartouche_zone">
       <div class="cartouche">
+<<<<<<< HEAD
+        <div class="cart_title">Nombre de covoiturages</div>
+        <div class="cart_num"><span><?php echo recupGeneriqueBddFunction("nbCovoiturages(".valider("idUser","SESSION").")"); ?></span><span>covoiturages</span></div>
+=======
         <div id="covoitWordSTittle" class="cart_title">Nombre de covoiturages</div>
         <div class="cart_num"><span id="nbCovoitCart" ><?php echo recupGeneriqueBdd("trajet","COUNT(*)") ?></span><span id="covoitWordS">covoiturages</span></div>
+>>>>>>> 652390a9b95d879cc71ba0f20b65bde8e31c7daf
       </div>
       <div class="cartouche">
         <div class="cart_title">Nombre de voyages</div>
-        <div class="cart_num"><span>12</span><span>voyages</span></div>
+        <div class="cart_num"><span><?php echo recupGeneriqueBddFunction("nbVoyages(".valider("idUser","SESSION").")"); ?></span><span>voyages</span></div>
       </div>
       <div class="cartouche">
         <div class="cart_title">Nombre de passagers</div>
-        <div class="cart_num"> 
-          <?php 
-            $count = 0;
-            $table = "trajet";
-            $result = recupGeneriqueBddFE($table,"id","WHERE idConducteur = 1");
-            foreach(parcoursRs($result) as $value)
-            {
-                $idTr = $value["id"];
-                $count += recupGeneriqueBdd("utilisateurTrajet","COUNT(*)","WHERE idTrajet=$idTr");
-            }
-            echo $count." trajets";
-          ?>
-        </div>
+        <div class="cart_num"><span><?php echo recupGeneriqueBddFunction("nbPassagers(".valider("idUser","SESSION").")"); ?></span><span>passagers</span></div>
       </div>
     </div>
     </div>

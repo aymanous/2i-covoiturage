@@ -9,6 +9,12 @@ function recupGeneriqueBdd($table,$colonne,$condition="")
 	return SQLGetChamp($SQL);
 }
 
+function recupGeneriqueBddFunction($function)
+{
+	$SQL="SELECT $function";
+	return SQLGetChamp($SQL);
+}
+
 function recupGeneriqueBddFE($table,$colonne,$condition="")
 {
 	$SQL="SELECT $colonne FROM $table $condition";
