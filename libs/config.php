@@ -13,12 +13,8 @@ $BDD_base="testdb_<nom>";
 // MACHINE LINUX 
 $BDD_host="localhost";
 $BDD_user="root";
-<<<<<<< HEAD
-$BDD_password=""; // vide sous windows
-$BDD_base="kovoit";
-=======
+
 $BDD_password="rootroot"; // vide sous windows
-$BDD_base="covoit2i";
->>>>>>> 652390a9b95d879cc71ba0f20b65bde8e31c7daf
+$BDD_base="covoit2i2";
 
 ?>
