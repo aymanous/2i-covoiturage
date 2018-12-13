@@ -116,12 +116,12 @@ $(document).ready(function(){
                         }
             }
         });
-  }else{
+    }else{
     $("#checkCity").after("<div id='warningCreaTrajet' class='alert alert-danger' role='alert'>Vous devez remplir l'ensemble des champs</div>");
     window.setTimeout( deleteMessage , 3000 );
-    
-    
-  }
+
+
+    }
     })
 
 
@@ -129,13 +129,14 @@ $(document).ready(function(){
         $(".notifMsg").hide();
     },3000);
 
-
-
     $("#solutionjoke").hide();
     setTimeout(function(){
         $("#errorjoke").hide();
         $("#solutionjoke").show();
-        
+
+        setTimeout(function(){
+            $("#solutionjoke").hide();
+        },3000);
     },3000);
 
 });
