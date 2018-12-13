@@ -14,7 +14,8 @@ $BDD_base="testdb_<nom>";
 $BDD_host="localhost";
 $BDD_user="root";
 
-$BDD_password="rootroot"; // vide sous windows
-$BDD_base="covoit2i2";
+
+$BDD_password=""; // vide sous windows
+$BDD_base="kovoit";
 
 ?>
